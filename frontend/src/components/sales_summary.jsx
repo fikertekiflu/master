@@ -30,7 +30,7 @@ function Sales() {
     const fetchSales = async () => {
       setLoading(true);
       try {
-        const response = await axios.get('http://localhost:5000/api/sales/data', {
+        const response = await axios.get('http://localhost:4000/api/tmx/performance/sales-data', {
           params: {
             startDate: startDate.toISOString().split('T')[0],
             endDate: endDate.toISOString().split('T')[0],
