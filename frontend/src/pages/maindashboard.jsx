@@ -1,6 +1,7 @@
 import React from 'react';
 import Overview from '../components/overview'; // Import the dynamic Overview component
 import Sales from '../components/sales_summary'; // Import the dynamic Overview component
+import StockLevels from '../components/inventory'; // Import the dynamic Overview component
 
 export default function MainDashboard({ activeSection }) {
     const renderContent = () => {
@@ -35,7 +36,7 @@ export default function MainDashboard({ activeSection }) {
 
 // Keep these placeholder components for other sections
 // const Sales = () => <Section title="📈 Sales Performance" text="Detailed sales trends and analysis." />;
-const StockLevels = () => <Section title="📦 Stock Levels" text="Current voucher inventory and denominations." />;
+// const StockLevels = () => <Section title="📦 Stock Levels" text="Current voucher inventory and denominations." />;
 const RecentActivity = () => <Section title="⏱️ Recent Activity" text="Log of recent purchases and redemptions." />;
 const Placeholder = ({ title }) => (
     <Section title={`🚧 ${title}`} text="This section is under development..." />

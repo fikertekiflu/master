@@ -11,8 +11,8 @@ import {
   Title,
   Tooltip,
   Legend,
-  ArcElement, // For Pie chart
-  BarElement, // For Bar chart
+  ArcElement, 
+  BarElement, 
 } from 'chart.js';
 
 ChartJS.register(
@@ -57,14 +57,11 @@ function Overview() {
                 setOverviewData(null);
             }
         };
-
         fetchOverviewData();
     }, [selectedMonth]);
-
     const handleMonthChange = (selectedOption) => {
         setSelectedMonth(selectedOption);
     };
-
     const salesTrendChartData = overviewData?.salesTrend ? {
         labels: overviewData.salesTrend.map(item => new Date(item.sale_date).toLocaleDateString()),
         datasets: [{
@@ -74,7 +71,6 @@ function Overview() {
             fill: false,
         }],
     } : { labels: [], datasets: [] };
-
     const salesByTypeChartData = overviewData?.salesByType ? {
         labels: overviewData.salesByType.map(item => item.purchase_type),
         datasets: [{
@@ -92,7 +88,6 @@ function Overview() {
             backgroundColor: 'rgba(153, 102, 255, 0.6)',
         }],
     } : { labels: [], datasets: [] };
-
     return (
         <div className="p-6">
             <div className="mb-4">
@@ -108,7 +103,6 @@ function Overview() {
                     classNamePrefix="select"
                 />
             </div>
-
             {overviewData ? (
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
                     <div className=" shadow rounded p-4">
@@ -131,7 +125,6 @@ function Overview() {
             ) : (
                 <div>Loading Overview Data...</div>
             )}
-
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="shadow rounded p-4">
                     <h3 className="text-lg font-semibold text-gray-700 mb-2">Sales Trend</h3>
@@ -150,7 +143,6 @@ function Overview() {
                     )}
                 </div>
             </div>
-
             {overviewData?.topAgents && overviewData.topAgents.length > 0 && (
                 <div className=" shadow rounded p-4 mt-4">
                     <h3 className="text-lg font-semibold text-gray-700 mb-2">Top Performing Agents</h3>
@@ -166,5 +158,4 @@ function Overview() {
         </div>
     );
 }
-
 export default Overview;

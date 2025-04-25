@@ -10,7 +10,6 @@ import {
     SquaresPlusIcon,
 } from '@heroicons/react/24/outline';
 import { ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/20/solid';
-
 const Sidebar = ({ onNavigate, activeSection }) => {
     const [expanded, setExpanded] = useState(null);
 
@@ -22,7 +21,6 @@ const Sidebar = ({ onNavigate, activeSection }) => {
         onNavigate(key);
         setExpanded(null);
     };
-
     const navItems = [
         {
             group: 'Performance',
@@ -50,13 +48,11 @@ const Sidebar = ({ onNavigate, activeSection }) => {
             future: true,
         },
     ];
-
     return (
         <aside className="w-64 bg-emerald-50 shadow-lg h-screen flex flex-col py-8 px-3 border-r border-emerald-200">
             <div className="mb-10 flex items-center justify-center">
-                <ShoppingCartIcon className="h-8 w-8 text-emerald-600 mr-2" />
                 <h2 className="text-xl font-semibold text-emerald-700 tracking-wider">
-                    Voucher Hub
+                    Master Agent
                 </h2>
             </div>
             <nav className="flex-grow space-y-0.5">
@@ -102,10 +98,9 @@ const Sidebar = ({ onNavigate, activeSection }) => {
                 ))}
             </nav>
             <div className="mt-auto py-4 text-center text-gray-500 text-xs border-t border-emerald-200">
-                <p>&copy; {new Date().getFullYear()} Voucher Hub</p>
+                <p>&copy; {new Date().getFullYear()} tmx_master Agent</p>
             </div>
         </aside>
     );
 };
-
 export default Sidebar;
